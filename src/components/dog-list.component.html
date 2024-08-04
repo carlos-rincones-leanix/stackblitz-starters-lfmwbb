@@ -1,0 +1,12 @@
+<ul>
+  <li *ngFor="let dog of dogs$ | async">
+    <span>{{ dog.name }}</span>
+    <span (click)="toggleFavorite(dog.id)">
+      {{ dog.isFavorite ? '★' : '☆' }}
+    </span>
+    <div>
+      Favorite toy: <span class="toy-name">{{ dog.favoriteToy }}</span>
+      <button (click)="updateFavoriteToy(dog.id)">Edit Toy</button>
+    </div>
+  </li>
+</ul>

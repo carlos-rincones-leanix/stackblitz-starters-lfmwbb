@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let user of users$ | async">
+    <span>{{ user.name }}</span>
+    <div>Owned dogs</div>
+    <ul>
+      <li *ngFor="let dog of user.dogs">
+        <span>{{ dog.name }}</span>
+        <span>{{ dog.isFavorite ? '★' : '☆' }}</span>
+        <div>Favorite toy: {{ dog.favoriteToy }}</div>
+      </li>
+    </ul>
+  </li>
+</ul>
